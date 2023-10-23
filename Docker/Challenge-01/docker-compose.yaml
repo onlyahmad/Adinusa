@@ -1,0 +1,33 @@
+version : '3'
+
+services:
+    haproxy:
+        container_name: ahmad1510520140-haproxy
+        image: registry.adinusa.id/btacademy/haproxy-alpine:2.4
+        ports:
+            - "80:80"
+        volumes:
+            - .:/usr/local/etc/haproxy:ro
+        networks:
+            - database
+    web1:
+        container_name: web1
+        image: registry.adinusa.id/btacademy/nginx:latest
+        ports:
+         - "8111:80"
+        networks:
+           - database
+
+    web2:
+        container_name: web2
+        image: registry.adinusa.id/btacademy/httpd:latest
+        ports:
+         - "8222:80"
+        networks:
+            - database
+
+networks:
+  database:
+    name: database
+    driver: bridge
+

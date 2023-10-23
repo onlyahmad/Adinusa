@@ -1,0 +1,29 @@
+Note: Execute in node02
+
+1. Make Directory challenge2, change to directory challenge2
+
+2. Clone repository from https://github.com/academynusa/perpus-laravel.git
+
+3. Create Image img-perpus-username with Dockerfile
+
+4. Run the container with image img-perpus-username, expose port 8000, and name it perpus-username
+
+Clue
+
+- Run Command composer update (in directory perpus)
+- Copy .env.example cp .env.example .env
+- Run Command php artisan key:generate to generate APP_KEY in .env
+- Make sure you have database perpusku_gc
+- Setting database configuration in .env
+- Run Commandphp artisan migrate
+- Also Run Command php artisan db:seed
+- To Running The Project Run php artisan serve
+
+Login admin
+
+username : admin123
+password : admin123
+Login user
+
+username : user123
+password : user123
